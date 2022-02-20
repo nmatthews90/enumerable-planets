@@ -7,8 +7,25 @@
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<body class="container">
 <h1>Pick a planet:</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Planet</th>
+        <th>Length of year</th>
+        <th>Number of Moons</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="planet : ${planets}">
+            <td th:text="${planet.displayName}"></td>
+            <td th:text="${planet.yearLength} + ' Earth days in one year.'"></td>
+            <td th:text="${planet.numberOfMoons}"></td>
+        </tr>
+    </tbody>
+</table>
+
 
 </body>
 </html>
